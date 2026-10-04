@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <!-- Request exemption from battery optimization -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <!-- Required for WakeLock -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Required to launch activity from background -->
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- Required to restart service after task removed -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CrashGuard">
+
+        <!-- ✅ FIX 3 — MainActivity should be the launcher -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".LoginScreenActivity"
+            android:exported="false" />
+
+        <activity android:name=".DashboardActivity" android:exported="false" />
+        <activity android:name=".LiveLocationSharingActivity" android:exported="false" />
+        <activity android:name=".SignUpActivity" android:exported="false" />
+
+        <activity
+            android:name=".MyEmerContActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Add_EmergencyActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Edit_ContactActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MyAccount"
+            android:exported="false"
+            android:theme="@style/Theme.CrashGuard" />
+
+        <!-- ✅ FIX 2 — SendSMSActivity must show on lock screen -->
+        <activity
+            android:name=".SendSMSActivity"
+            android:exported="false"
+            android:showOnLockScreen="true"
+            android:turnScreenOn="true"
+            android:keepScreenOn="true"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop" />
+
+        <!-- ✅ FIX 4 — Correct foreground service type for sensor app -->
+        <service
+            android:name=".SensorService"
+            android:foregroundServiceType="location"
+            android:exported="false"
+            android:stopWithTask="false" />
+
+    </application>
+
+</manifest>

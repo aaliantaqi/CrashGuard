@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CrashGuard</string>
+    
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="emergencymessage">
+    Accident detected! Please help!
+    \nName:
+    \nBlood Group:
+    \nLocation: Getting location...
+</string>
+
+
+</resources>

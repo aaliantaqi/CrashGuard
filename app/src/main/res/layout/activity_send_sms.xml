@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_gradient_main"
+    android:padding="20dp">
+
+    <!-- Top Alert Icon -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/alarm"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_circle_red"
+        android:padding="12dp" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/textcontactmain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency Alert"
+        android:textColor="#DC2626"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_below="@id/imageView2"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Contact Info Card -->
+    <LinearLayout
+        android:id="@+id/contactCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textcontactmain"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_card_white"
+        android:padding="16dp"
+        android:elevation="6dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/name1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="#111827"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/phone1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone"
+            android:textColor="#6B7280"
+            android:textSize="14sp"
+            android:gravity="end" />
+
+    </LinearLayout>
+
+
+
+    <!-- Timer -->
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contactCard"
+        android:layout_marginTop="6dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:text="⏳ Sending in 20 seconds..."
+        android:textColor="#DC2626"
+        android:textStyle="bold" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="320dp"
+        android:layout_height="8dp"
+        android:layout_below="@id/timer"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:progress="0"
+        android:progressTint="#DC2626" />
+
+    <!-- Message Label -->
+    <TextView
+        android:id="@+id/emergencymessagedescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency Message"
+        android:textColor="#111827"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_below="@id/progressBar"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+
+    <!-- Message Card -->
+    <RelativeLayout
+        android:id="@+id/messageCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emergencymessagedescription"
+        android:elevation="10dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_card_alert"
+        android:padding="18dp">
+
+        <TextView
+            android:id="@+id/emergencymessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/emergencymessage"
+            android:textColor="#1F2937"
+            android:textSize="15sp"
+            android:lineSpacingExtra="6dp" />
+    </RelativeLayout>
+
+    <!-- Buttons Container -->
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/messageCard"
+        android:layout_marginTop="36dp"
+        android:orientation="vertical">
+
+        <!-- SEND BUTTON (PRIMARY ACTION) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/send"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="🚨 SEND ALERT NOW"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="@null"
+            android:background="@drawable/bg_button_red"
+            android:onClick="sendButtonPress"/>
+
+        <!-- CANCEL BUTTON (SECONDARY) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancel"
+            android:layout_width="190dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:text="Cancel"
+            android:textColor="#DC2626"
+            app:backgroundTint="@null"
+            android:background="@drawable/bg_button_outline_red"
+            android:onClick="cancelAlarm"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Auto sending if no action taken"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

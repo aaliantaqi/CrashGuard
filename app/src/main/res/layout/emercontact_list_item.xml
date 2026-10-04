@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="6dp"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="5dp"
+    android:backgroundTint="#FFFFFF">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="12dp">
+        <!-- Name -->
+        <TextView
+            android:id="@+id/cont_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#111827"
+            android:layout_alignParentStart="true"
+            android:maxLines="1"
+            android:ellipsize="end" />
+        <!-- Mobile Number -->
+        <TextView
+            android:id="@+id/cont_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile number"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#6B7280"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBaseline="@id/cont_name"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <TextView android:id="@+id/btn_edit" android:layout_width="wrap_content" android:layout_height="34dp" android:text="Edit" android:textColor="#FF710B" android:textSize="13sp" android:textStyle="bold" android:gravity="center_vertical" android:paddingStart="36dp" android:paddingEnd="14dp" android:layout_below="@id/cont_name" android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="Delete"
+            android:textColor="#FF3B30"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:paddingStart="36dp"
+            android:paddingEnd="14dp"
+            android:layout_below="@id/cont_name"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp" />
+        <!-- Edit Icon -->
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/orange_edit"
+            android:layout_alignStart="@id/btn_edit"
+            android:layout_alignTop="@id/btn_edit"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp" />
+        <!-- Delete Icon -->
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/orange_delete"
+            android:layout_alignStart="@id/btn_delete"
+            android:layout_alignTop="@id/btn_delete"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
