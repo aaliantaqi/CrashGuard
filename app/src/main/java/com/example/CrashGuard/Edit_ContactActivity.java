@@ -63,6 +63,7 @@ public class Edit_ContactActivity extends Activity {
                 }
 
                 final String s = "Name=" + enteredName + " Phone=" + normalizedPhone;
+                db.updatecontact("cont" + cont, s, email);
                 Toast.makeText(Edit_ContactActivity.this, "Contact updated successfully", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Edit_ContactActivity.this, MyEmerContActivity.class);

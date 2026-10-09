@@ -10,7 +10,7 @@ import androidx.core.app.NotificationCompat;
 import android.provider.Settings;
 import android.widget.Toast;
 
-public abstract class SensorService extends Service implements SensorEventListener {
+public class SensorService extends Service implements SensorEventListener {
 
     private static final String TAG = "SensorService";
     private PowerManager.WakeLock wakeLock;
@@ -36,6 +36,10 @@ public abstract class SensorService extends Service implements SensorEventListen
     private boolean sensorsRegistered = false;
     private long lastSensorLogAtMs = 0L;
 
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
 
     @Override
     public void onCreate() {
